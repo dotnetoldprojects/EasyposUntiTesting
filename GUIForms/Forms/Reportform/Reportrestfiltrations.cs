@@ -358,6 +358,7 @@ namespace Resturantlayer
             RD.SetParameterValue("English_Shop_name", DC.ENName);
             RD.SetParameterValue("CompanyName", DC.Name);
             FR.CRV.ReportSource = RD;
+            this.Close();
             FR.Show();
         }
 

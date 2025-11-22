@@ -266,7 +266,7 @@ namespace GUIForms.helpers
                     Rep.SetParameterValue("Totaldiscount", "0" );
                     Rep.SetParameterValue("Totalafterdiscount", Totalafterdiscount);
                     Rep.SetParameterValue("Proname", DC.CRN);
-                    FR.Show();
+                    FR.ShowDialog();
                 }
             }
             else
