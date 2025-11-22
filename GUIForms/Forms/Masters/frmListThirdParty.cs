@@ -1,8 +1,10 @@
 ﻿using CountryCodes;
 using Domain.Models;
+using Easypos.Salesforms.Cashier;
 using Easypos.Tailoring;
 using GUIForms.Dtos;
 using GUIForms.Forms.Masters.Subforms;
+using GUIForms.Forms.salesforms.Normal;
 using GUIForms.helpers;
 using Microsoft.VisualBasic;
 using PhoneNumbers;
@@ -340,6 +342,28 @@ namespace Easypos.Masters
                         p.clientID.Text = txtName.Text;
                         p.textBox15.Text = txtMobile.Text;
                         p.Getcustdata();
+                        Clearfieldes();
+                        this.Close();
+                        return;
+                        //p.textBox15.Text = txtMobile.Text;
+                    }
+                    if (Application.OpenForms["frmMSalesBill"] != null)
+                    {
+                        frmMSalesBill p = (Application.OpenForms["frmMSalesBill"] as frmMSalesBill);
+                        p.LoadAllCombos();
+                        //p.Cleargc();
+                        p.clientID.Text = txtName.Text;
+                        Clearfieldes();
+                        this.Close();
+                        return;
+                        //p.textBox15.Text = txtMobile.Text;
+                    }
+                    if (Application.OpenForms["frmPOS"] != null)
+                    {
+                        frmPOS p = (Application.OpenForms["frmPOS"] as frmPOS);
+                        p.LoadAllCombos();
+                        //p.Cleargc();
+                        p.clientID.Text = txtName.Text;
                         Clearfieldes();
                         this.Close();
                         return;

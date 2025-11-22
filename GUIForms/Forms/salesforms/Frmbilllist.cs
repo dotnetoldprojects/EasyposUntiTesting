@@ -133,7 +133,9 @@ namespace Easypos.Salesforms
         private async void DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var Datedata = DGV.CurrentRow.Cells[5].Value.ToString();
-            var MDate = DateTime.Now.ToString("dd-MM-yyyy");
+            //var MDate = DateTime.Now.AddHours(24).ToString("dd-MM-yyyy");
+            var dateInv = DateTime.Parse(Datedata);
+            var lastDate = dateInv.AddHours(24);
             var Dataid = DGV.CurrentRow.Cells[4].Value.ToString();
             var Datatye = DGV.CurrentRow.Cells[14].Value.ToString();
             var Datareg = DGV.CurrentRow.Cells[15].Value.ToString();
@@ -236,9 +238,11 @@ namespace Easypos.Salesforms
                         MessageBox.Show("لا يمكن تسجيل الفاتوره لانها مسجله مسبقا", "تسجيل فاتوره", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    else if (Datedata != MDate)
+                    // لو التاريخ اللي المستخدم كاتبه أقدم من 24 ساعة
+                    if (dateInv > lastDate)
                     {
-                        MessageBox.Show("لا يمكن تسجيل فاتوره بتاريخ مسبق", "تسجيل فاتوره", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("لا يمكن تسجيل فاتوره بتاريخ مسبق",
+                            "تسجيل فاتوره", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     else

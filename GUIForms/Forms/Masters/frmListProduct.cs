@@ -323,5 +323,19 @@ namespace Easypos.Masters
         {
             _NO.Usenumber(sender, e);
         }
+        private void txtUnitPrice_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtUnitPrice.SelectAll();
+        }
+
+        private void txtStocksOnHand_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtStocksOnHand.SelectAll();
+        }
+
+        private void txtReorderLevel_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtReorderLevel.SelectAll();
+        }
     }
 }

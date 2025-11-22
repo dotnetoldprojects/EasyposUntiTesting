@@ -105,7 +105,7 @@ namespace Easypos.Payment
                             Savpayment();
                         }
                         var Gp = _IUW.payments.GetAll().LastOrDefault();
-                        if (Gp.Bank > 0)
+                        if (Gp?.Bank > 0)
                         {
                             var trans = new transaction();
                             trans.Invoiceno = Gp.InvoiceNo;
@@ -119,7 +119,7 @@ namespace Easypos.Payment
                             _IUW.transactions.Insert(trans);
                             _IUW.Complete();
                         }
-                        if (Gp.Cash > 0)
+                        if (Gp?.Cash > 0)
                         {
                             var trans = new transaction();
                             trans.Invoiceno = Gp.InvoiceNo;
@@ -134,27 +134,37 @@ namespace Easypos.Payment
                             _IUW.Complete();
                         }
                         //Sb.Generatexml();
-                        if ((bool)DC.Isusesigne)
+                        if (Sb.Billtype.Text == "صدرت")
                         {
-                            Cursor.Current = Cursors.WaitCursor;
-                            var Bank = Gp.Bank;
-                            var Cash = Gp.Cash;
-                            ZF.invid = Sb.Invid;
-                            ZF.DC = DC;
-                            if (Cash > 0 && Bank == 0)
+                            if ((bool)DC.Isusesigne)
                             {
-                                ZF.Payenum = Paymentenum.Cash;
+                                Cursor.Current = Cursors.WaitCursor;
+                                var Bank = Gp?.Bank;
+                                var Cash = Gp?.Cash;
+                                ZF.invid = Sb.Invid;
+                                ZF.DC = DC;
+                                if (DC.Signtype != 2)
+                                {
+                                    if (Cash > 0)
+                                    {
+                                        ZF.Payenum = Paymentenum.Cash;
+                                    }
+                                    if (Bank > 0)
+                                    {
+                                        ZF.Payenum = Paymentenum.Bank;
+                                    }
+                                }
+                                else
+                                {
+                                    ZF.Payenum = Paymentenum.Mixed;
+                                }
+                                Cursor.Current = Cursors.Default;
                             }
-                            if (Bank > 0 && Cash == 0)
-                            {
-                                ZF.Payenum = Paymentenum.Bank;
-                            }
-                            if (Bank > 0 && Cash > 0)
+                            else
                             {
                                 ZF.Payenum = Paymentenum.Mixed;
                             }
                             await ZF.Loading();
-                            Cursor.Current = Cursors.Default;
                         }
                         MessageBox.Show("تم حفظ الفاتورة بنجاح", "نجاح");
                     }

@@ -4,53 +4,51 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="718a38a036964e7a99e198d345251790" Name="Diagram1" ZoomLevel="88">
-        <EntityTypeShape EntityType="EasyposModel.cashier" Width="1.5" PointX="0.875" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.category" Width="1.5" PointX="2.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.expencestype" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.expens" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.item" Width="1.5" PointX="8.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.itemsale" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.order" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.payment" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.paymentout" Width="1.5" PointX="10.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.price" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.pricedetaile" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.product" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.productitem" Width="1.5" PointX="12.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.purchasedetaile" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.purchase" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.sale" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.staff" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.transaction" Width="1.5" PointX="18.375" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.unittype" Width="1.5" PointX="2.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.expensesview" Width="1.5" PointX="14.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyposModel.voucher" Width="1.5" PointX="0.75" PointY="17.75" />
-        <EntityTypeShape EntityType="EasyposModel.stok_transaction" Width="1.5" PointX="7.375" PointY="7.75" />
-        <EntityTypeShape EntityType="EasyposModel.returned" Width="1.5" PointX="5.375" PointY="13.75" />
-        <EntityTypeShape EntityType="EasyposModel.returnedetaile" Width="1.5" PointX="15.375" PointY="11.75" />
-        <EntityTypeShape EntityType="EasyposModel.UBL" Width="1.5" PointX="3.375" PointY="17.75" />
-        <EntityTypeShape EntityType="EasyposModel.invtransaction" Width="1.5" PointX="15.375" PointY="15.75" />
-        <EntityTypeShape EntityType="EasyposModel.exceptionpro" Width="1.5" PointX="7.375" PointY="10.75" />
-        <EntityTypeShape EntityType="EasyposModel.company" Width="1.5" PointX="5.375" PointY="17.75" />
-        <EntityTypeShape EntityType="EasyposModel.alltailoring" Width="1.5" PointX="9.625" PointY="16.625" />
-        <EntityTypeShape EntityType="EasyposModel.tailorbocket" Width="1.5" PointX="7.375" PointY="26.125" />
-        <EntityTypeShape EntityType="EasyposModel.tailordetaile" Width="1.5" PointX="7.375" PointY="34.25" />
-        <EntityTypeShape EntityType="EasyposModel.tailorhand" Width="1.5" PointX="7.375" PointY="30.375" />
-        <EntityTypeShape EntityType="EasyposModel.tailorheader" Width="1.5" PointX="7.375" PointY="44" />
-        <EntityTypeShape EntityType="EasyposModel.tailorjabzor" Width="1.5" PointX="7.375" PointY="16" />
-        <EntityTypeShape EntityType="EasyposModel.tailorneck" Width="1.5" PointX="7.375" PointY="39.125" />
-        <EntityTypeShape EntityType="EasyposModel.thirdparty" Width="1.5" PointX="12.375" PointY="15.75" />
-        <AssociationConnector Association="EasyposModel.FK_alltailoring_tailorbocket" />
-        <AssociationConnector Association="EasyposModel.FK_alltailoring_tailordetaile" />
-        <AssociationConnector Association="EasyposModel.FK_alltailoring_tailorhand" />
-        <AssociationConnector Association="EasyposModel.FK_alltailoring_tailorheader" />
-        <AssociationConnector Association="EasyposModel.FK_alltailoring_tailorjabzor" />
-        <AssociationConnector Association="EasyposModel.FK_alltailoring_tailorneck" />
-        <AssociationConnector Association="EasyposModel.FK_tailorheader_thirdparty" />
-        <EntityTypeShape EntityType="EasyposModel.Kafil" Width="1.5" PointX="10.125" PointY="20.625" />
-        <AssociationConnector Association="EasyposModel.FK_thirdparty_Kafil" />
-        <EntityTypeShape EntityType="EasyposModel.salesdetaile" Width="1.5" PointX="15.375" PointY="3.75" />
+      <Diagram DiagramId="2eec768c358447e2b0dfe53dee263815" Name="Diagram1">
+        <EntityTypeShape EntityType="Easyposcontext.alltailoring" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.cashier" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.category" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.exceptionpro" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.expencestype" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.expens" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.invtransaction" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.item" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.itemsale" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.Kafil" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.order" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.payment" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.paymentout" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.price" Width="1.5" PointX="13.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.pricedetaile" Width="1.5" PointX="13.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.product" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.productitem" Width="1.5" PointX="7.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.purchasedetaile" Width="1.5" PointX="9.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.purchase" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.returned" Width="1.5" PointX="15.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.returnedetaile" Width="1.5" PointX="15.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.sale" Width="1.5" PointX="15.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.salesdetaile" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.staff" Width="1.5" PointX="17.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.stok_transaction" Width="1.5" PointX="5.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.tailorbocket" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.tailordetaile" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.tailorhand" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.tailorheader" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.tailorjabzor" Width="1.5" PointX="3" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.tailorneck" Width="1.5" PointX="3" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.thirdparty" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.transaction" Width="1.5" PointX="17.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.UBL" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.unittype" Width="1.5" PointX="15.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Easyposcontext.voucher" Width="1.5" PointX="17.75" PointY="16.75" IsExpanded="true" />
+        <AssociationConnector Association="Easyposcontext.FK_alltailoring_tailorbocket" ManuallyRouted="false" />
+        <AssociationConnector Association="Easyposcontext.FK_alltailoring_tailordetaile" ManuallyRouted="false" />
+        <AssociationConnector Association="Easyposcontext.FK_alltailoring_tailorhand" ManuallyRouted="false" />
+        <AssociationConnector Association="Easyposcontext.FK_alltailoring_tailorheader" ManuallyRouted="false" />
+        <AssociationConnector Association="Easyposcontext.FK_alltailoring_tailorjabzor" ManuallyRouted="false" />
+        <AssociationConnector Association="Easyposcontext.FK_alltailoring_tailorneck" ManuallyRouted="false" />
+        <AssociationConnector Association="Easyposcontext.FK_tailorheader_thirdparty" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Easyposcontext.company" Width="1.5" PointX="8.375" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

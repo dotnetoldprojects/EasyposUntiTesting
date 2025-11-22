@@ -99,7 +99,7 @@ namespace Easypos.Salesforms.Cashier
                 x.Status
             }).ToList();
         }
-        private void LoadAllCombos()
+        public void LoadAllCombos()
         {
             Commondatasales.FillCombo(clientID, GC.Getcustomerdatalist(), "Name", "ID");
             clientID.SelectedIndex = 1;
@@ -312,11 +312,11 @@ namespace Easypos.Salesforms.Cashier
                 SD.TDDesc = DGV.Rows[i].Cells[1].Value.ToString();
                 SD.Unitid = int.Parse(DGV.Rows[i].Cells[3].Value.ToString());
                 SD.Quantity = double.Parse(DGV.Rows[i].Cells[4].Value.ToString());
-                SD.ItemPrice = decimal.Parse(DGV.Rows[i].Cells[5].Value.ToString());
-                SD.Subtotal = decimal.Parse(DGV.Rows[i].Cells[6].Value.ToString());
+                SD.ItemPrice = double.Parse(DGV.Rows[i].Cells[5].Value.ToString());
+                SD.Subtotal = double.Parse(DGV.Rows[i].Cells[6].Value.ToString());
                 SD.Discount = 0;
-                SD.Totafterdiscount = decimal.Parse(DGV.Rows[i].Cells[6].Value.ToString());
-                SD.Total = SD.ItemPrice * decimal.Parse(SD.Quantity.ToString());
+                SD.Totafterdiscount = double.Parse(DGV.Rows[i].Cells[6].Value.ToString());
+                SD.Total = (decimal?)(double.Parse(SD.ItemPrice.ToString()) * double.Parse(SD.Quantity.ToString()));
                 details.Add(SD);
             }
             // استدعاء الدالة العامة
@@ -348,9 +348,9 @@ namespace Easypos.Salesforms.Cashier
                 SD.TDDesc = DGV.Rows[i].Cells[1].Value.ToString();
                 SD.Unitid = int.Parse(DGV.Rows[i].Cells[3].Value.ToString());
                 SD.Quantity = double.Parse(DGV.Rows[i].Cells[4].Value.ToString());
-                SD.ItemPrice = decimal.Parse(DGV.Rows[i].Cells[5].Value.ToString());
-                SD.Discount = decimal.Parse(DGV.Rows[i].Cells[6].Value.ToString());
-                SD.Subtotal = decimal.Parse(SD.Quantity.ToString()) * SD.ItemPrice;
+                SD.ItemPrice = double.Parse(DGV.Rows[i].Cells[5].Value.ToString());
+                SD.Discount = double.Parse(DGV.Rows[i].Cells[6].Value.ToString());
+                SD.Subtotal = double.Parse(SD.Quantity.ToString()) * SD.ItemPrice;
                 SD.Totafterdiscount = SD.Subtotal - SD.Discount;
                 SD.Total = decimal.Parse(DGV.Rows[i].Cells[7].Value.ToString());
                 details.Add(SD);

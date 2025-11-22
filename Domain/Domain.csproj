@@ -100,9 +100,6 @@
     <Compile Include="Models\expens.cs">
       <DependentUpon>Easyposcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\expensesview.cs">
-      <DependentUpon>Easyposcontext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\invtransaction.cs">
       <DependentUpon>Easyposcontext.tt</DependentUpon>
     </Compile>
@@ -196,11 +193,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\Easyposcontext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Easyposcontext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="App.Config" />
     <None Include="Dataset.xsc">
       <DependentUpon>Dataset.xsd</DependentUpon>
     </None>
@@ -212,11 +204,14 @@
     <None Include="Dataset.xss">
       <DependentUpon>Dataset.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="Models\Easyposcontext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Easyposcontext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Models\Easyposcontext.edmx.diagram">
       <DependentUpon>Easyposcontext.edmx</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

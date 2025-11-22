@@ -322,9 +322,9 @@ namespace Easypos.Tailoring
             TN.txtnumber = textBox14.Text == "" ? 0 : int.Parse(textBox14.Text);
             TN.texta = textBox13.Text == "" ? 0 : decimal.Parse(textBox13.Text);
             //TN.textb = textBox12.Text == "" ? 0 : decimal.Parse(textBox12.Text);
-            TN.txtnumberb = textBox11.Text == "" ? 0 : int.Parse(textBox11.Text);
-            TN.textc = textBox10.Text == "" ? 0 : decimal.Parse(textBox10.Text);
-            TN.textd = textBox9.Text == "" ? 0 : decimal.Parse(textBox9.Text);
+            //TN.txtnumberb = textBox11.Text == "" ? 0 : int.Parse(textBox11.Text);
+            //TN.textc = textBox10.Text == "" ? 0 : decimal.Parse(textBox10.Text);
+            //TN.textd = textBox9.Text == "" ? 0 : decimal.Parse(textBox9.Text);
             _IUW.tailornecks.Update(TN);
             _IUW.Complete();
         }
@@ -341,7 +341,7 @@ namespace Easypos.Tailoring
             TJ.Jab8 = checkBox7.Checked;
             TJ.Jab9 = checkBox6.Checked;
             TJ.Jab10 = checkBox5.Checked;
-            TJ.Zigzag = checkBox4.Checked;
+            //TJ.Zigzag = checkBox4.Checked;
             TJ.txtnumber = textBox31.Text == "" ? 0 : int.Parse(textBox31.Text);
             TJ.txt = textBox30.Text == "" ? 0 : decimal.Parse(textBox30.Text);
             _IUW.tailorjabzors.Update(TJ);
@@ -542,9 +542,9 @@ namespace Easypos.Tailoring
             checkBox17.Checked = (bool)TN.Frenchflip;
             textBox14.Text = TN.txtnumber.ToString();
             textBox13.Text = TN.texta.ToString();
-            textBox11.Text = TN.txtnumberb.ToString();
-            textBox10.Text = TN.textc.ToString();
-            textBox9.Text = TN.textd.ToString();
+            //textBox11.Text = TN.txtnumberb.ToString();
+            //textBox10.Text = TN.textc.ToString();
+            //textBox9.Text = TN.textd.ToString();
         }
         void Getjabzordata(tailorjabzor TJ)
         {
@@ -558,7 +558,7 @@ namespace Easypos.Tailoring
             checkBox7.Checked = (bool)TJ.Jab8;
             checkBox6.Checked = (bool)TJ.Jab9;
             checkBox5.Checked = (bool)TJ.Jab10; 
-            checkBox4.Checked = TJ.Zigzag.GetValueOrDefault(false);
+            //checkBox4.Checked = TJ.Zigzag.GetValueOrDefault(false);
             textBox31.Text = TJ.txtnumber.ToString();
             textBox30.Text = TJ.txt.ToString();
         }
@@ -662,9 +662,9 @@ namespace Easypos.Tailoring
                         txtnumber = entity.tailorneck.txtnumber,
                         texta = entity.tailorneck.texta,
                         textb = entity.tailorneck.textb,
-                        txtnumberb = entity.tailorneck.txtnumberb,
-                        textc = entity.tailorneck.textc,
-                        textd = entity.tailorneck.textd
+                        //txtnumberb = entity.tailorneck.txtnumberb,
+                        //textc = entity.tailorneck.textc,
+                        //textd = entity.tailorneck.textd
                     };
                 }
 
@@ -683,7 +683,7 @@ namespace Easypos.Tailoring
                         Jab8 = entity.tailorjabzor.Jab8,
                         Jab9 = entity.tailorjabzor.Jab9,
                         Jab10 = entity.tailorjabzor.Jab10,
-                        Zigzag = entity.tailorjabzor.Zigzag,
+                        //Zigzag = entity.tailorjabzor.Zigzag,
                         txtnumber = entity.tailorjabzor.txtnumber,
                         txt = entity.tailorjabzor.txt
                     };

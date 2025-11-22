@@ -48,6 +48,7 @@ namespace GUIForms.helpers
             _IUW = new Unitofwork(new EasyposEntities());
             DC = (company)GC.Getcompanydatalist();
         }
+
         public void Invoice(int Invid,string invchar)
         {
             ReportDocument Rep = new ReportDocument();
@@ -89,12 +90,16 @@ namespace GUIForms.helpers
                                   on s.Invoiceno equals sd.InvoiceNo into salesDetailsJoin
                               from sd in salesDetailsJoin.DefaultIfEmpty()
 
+                              join ut in _IUW.unittypes.GetAll()
+                                  on sd?.Unitid equals ut.ID into unitTypeJoin
+                              from ut in unitTypeJoin.DefaultIfEmpty()
+
                               join tp in _IUW.thirdparties.GetAll()
                                   on s.ThirdPartyID equals tp.ID into thirdPartyJoin
                               from tp in thirdPartyJoin.DefaultIfEmpty()
 
                               join kf in _IUW.Kafils.GetAll()
-                                  on tp.Kafid equals kf.Id into kafilJoin
+                                  on tp?.Kafid equals kf.Id into kafilJoin
                               from kf in kafilJoin.DefaultIfEmpty()
 
                               join pay in _IUW.payments.GetAll()
@@ -121,13 +126,13 @@ namespace GUIForms.helpers
                                   TaxNumber = tp != null ? tp.Taxnumber : null,
                                   Custaddress = tp != null ? tp.Address : null,
                                   NID = tp != null ? tp.Comments : null,
-                                  KafilName = kf != null ? kf.Name : null,
-                                  Kafilphone = kf != null ? kf.NID : null,
+                                  KafilName = kf?.Name,
+                                  Kafilphone = kf?.NID,
                                   s.Billtype,
                                   s.Note,
                                   TDDesc = sd != null ? sd.TDDesc : null,
                                   Quantity = sd != null ? sd.Quantity : (double?)null,
-                                  Subtotal = sd != null ? sd.Subtotal : (decimal?)null,
+                                  //Subtotal = sd != null ? sd.Subtotal : (decimal?)null,
                                   Total = sd != null ? sd.Total : (decimal?)null,
                                   QRCode = ubl != null ? ubl.QRCode : null,
                                   Path = ubl != null ? ubl.Path : null,
@@ -135,8 +140,10 @@ namespace GUIForms.helpers
                                   RN = s.RN,
                                   Proname = s.Proname,
                                   Paid = pay != null ? pay.Paid : (decimal?)null,
-                                  Remaining = pay != null ? pay.Remaining : (decimal?)null
+                                  Remaining = pay != null ? pay.Remaining : (decimal?)null,
+                                  ut.UName
                               }).ToList();
+                int index = 1;
                 foreach (var item in result)
                 {
                     NID = item.NID;
@@ -177,22 +184,22 @@ namespace GUIForms.helpers
                     ConvertNumbersToArabicAlphabet a = new ConvertNumbersToArabicAlphabet(GTot.ToString());
                     Wordofnumber = a.GetNumberAr();
                     Ds.Bill.Rows.Add(new object[] {
-                        item.Billtype == "مسوده" ? "مسوده" : !string.IsNullOrEmpty(invchar) ? invchar : item.Invoiceno.ToString(),
+                        //item.Billtype == "مسوده" ? "مسوده" : !string.IsNullOrEmpty(invchar) ? invchar : item.Invoiceno.ToString(),
+                        QRCode == null ? "مسوده" : item.Invoiceno.ToString(),
                         item.NonVatTotal,
                         item.Quantity,
                         0,
                         item.Total,
                         item.ThirdPartyName,
                         QRCode,
-                        null,
+                        index,
                         item.TDDesc,
-                        null,
+                        item.UName,
                         item.VatAmount,
                         item.TotalAmount,
                         CLogo,
-                        DC.PhoneNo,
-                        item.Note
                     });
+                    index++;
                 }
                 Rep.SetDataSource(Ds);
 

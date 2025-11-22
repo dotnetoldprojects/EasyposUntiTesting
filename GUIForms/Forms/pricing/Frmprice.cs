@@ -293,11 +293,11 @@ namespace Easypos.Pricing
                 SD.TDDesc = DGV.Rows[i].Cells[1].Value.ToString();
                 SD.Unitid = int.Parse(DGV.Rows[i].Cells[3].Value.ToString());
                 SD.Quantity = double.Parse(DGV.Rows[i].Cells[4].Value.ToString());
-                SD.ItemPrice = decimal.Parse(DGV.Rows[i].Cells[5].Value.ToString());
-                SD.Subtotal = decimal.Parse(DGV.Rows[i].Cells[6].Value.ToString());
+                SD.ItemPrice = double.Parse(DGV.Rows[i].Cells[5].Value.ToString());
+                SD.Subtotal = double.Parse(DGV.Rows[i].Cells[6].Value.ToString());
                 SD.Discount = 0;
-                SD.Totafterdiscount = decimal.Parse(DGV.Rows[i].Cells[6].Value.ToString());
-                SD.Total = SD.ItemPrice * decimal.Parse(SD.Quantity.ToString());
+                SD.Totafterdiscount = double.Parse(DGV.Rows[i].Cells[6].Value.ToString());
+                SD.Total = (decimal?)(SD.ItemPrice * double.Parse(SD.Quantity.ToString()));
                 details.Add(SD);
             }
             // استدعاء الدالة العامة

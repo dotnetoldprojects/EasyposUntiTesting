@@ -41,7 +41,7 @@ namespace GUIForms.Dtos
         private async Task Getzatcaid()
         {
             var lastInvoice = _IUW.UBLS.GetAll().OrderByDescending(i => i.Saleid).FirstOrDefault();
-            nextNumber = (int)(lastInvoice != null ? (lastInvoice.Saleid + 1) : 1);
+            nextNumber = (int)(lastInvoice != null ? (lastInvoice?.Saleid + 1) : 1);
             Zatcainv = $"inv-{nextNumber:D5}";
             await Getsalesdata();
         }
